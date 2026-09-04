@@ -100,7 +100,7 @@ public class ActorDemo {
             senders[i].join();
         }
 
-        actor.send(new Msg(0, true));   // บอกให้ actor เลิกงาน
+        actor.send(new Msg(0,true));   // บอกให้ actor เลิกงาน
         actorThread.join();
 
         long elapsed = System.currentTimeMillis() - start;

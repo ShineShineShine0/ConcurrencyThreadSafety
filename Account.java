@@ -48,7 +48,7 @@ public class Account {
     // บรรทัด balance = balance + amount; ดูเหมือนคำสั่งเดียว
     // แต่จริง ๆ คือ อ่าน → บวก → เขียน สามจังหวะที่ถูกแทรกกลางคันได้
     // ---------------------------------------------------------------
-    public void deposit(int amount) {
+    public synchronized void deposit(int amount) {
         if (amount <= 0) {
             throw new IllegalArgumentException("amount must be positive");
         }
@@ -64,7 +64,7 @@ public class Account {
     //
     // @return true ถ้าถอนสำเร็จ, false ถ้าเงินไม่พอ
     // ---------------------------------------------------------------
-    public boolean withdraw(int amount) {
+    public  synchronized boolean withdraw(int amount) {
         if (amount <= 0) {
             throw new IllegalArgumentException("amount must be positive");
         }
